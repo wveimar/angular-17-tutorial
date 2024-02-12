@@ -1,0 +1,102 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light nav-yellow  border-bottom border-top p-0">
+    <div class="container">
+      <a class="navbar-brand fs-4 fw-bold "><i class="fa fa-cart-shopping fs-4" style="color: #f54242;"></i><span
+          class="textBlur">bigBasket</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!--Toggle  -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Nav Items -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-semibold text-uppercase me-1" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <ul >
+                <li *ngFor="let category of categoryList" >
+                  <a class="dropdown-item" (click)="navigateToProducts(category)" routerLinkActive="router-link-active" >
+                    {{category}}1
+                  </a>
+                  
+                </li>
+              </ul>
+            </li> 
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-black me-1"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">About Us</a></li>
+              <li><a class="dropdown-item">Contact Us</a></li>
+              <li><a class="dropdown-item">Terms and Conditions</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-uppercase text-black me-1 hand"
+              >Contact us</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              ><i
+                class="fa-solid fa-magnifying-glass fs-5"
+                style="color: #0c0d0d"
+              ></i
+            ></a>
+          </li>
+          
+             
+         
+            <span class="d-flex">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle fw-semibold text-uppercase me-1"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item hand"> Profile </a></li>
+                  <li>
+                    <a
+                      class="dropdown-item hand"
+                      routerLink="/order-history"
+                      routerLinkActive="router-link-active"
+                    >
+                      Orders</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item ms-4">
+                <button class="btn btn-sm btn-danger logOutBtn">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </button>
+              </li>
+            </span>
+          <li class="nav-item">
+            <a class="nav-link"> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- <app-web-products></app-web-products> -->
+
+
+<router-outlet></router-outlet>
