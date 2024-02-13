@@ -9,5 +9,6 @@ export const Constant = {
         UPDATE_PRODUCT: 'products/',
         DELETE_PRODUCT: 'products/?id',  
         ADD_TO_CART: 'carts',  
+        GET_CART_BY_CUST: 'carts/?id',  
     }
 }

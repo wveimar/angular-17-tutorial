@@ -16,6 +16,7 @@ export class WebProductsComponent {
   categoryList: any[] = [];
 
   constructor(private productSrv: ProductService, private router: Router) {}
+ 
   ngOnInit(): void {
     this.getAllProducts();
     this.getAllCategory();
@@ -23,6 +24,22 @@ export class WebProductsComponent {
 
   navigateToProducts(id: number) {
     this.router.navigate(['/products', id]);
+  }
+
+  addToCart(id: number){
+    const addtocartObj = {
+      userId:5,
+      date:new Date(),
+      products:[{id:id,quantity:1}]
+    };
+    this.productSrv.addToCart(addtocartObj).subscribe((res:any) => {
+      if(res) {
+        alert("Product added successfully")
+      }else {
+        alert(res.message)
+      }
+
+    })
   }
 
   getAllProducts() {

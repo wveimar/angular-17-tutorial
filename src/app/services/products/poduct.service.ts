@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/constant';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class ProductService {
   }
   getProductsByCategory(id: string) {
     return this.http.get(
-      Constant.API_END_POINT + Constant.METHODS.GET_ALL_PRODUCT_BY_CATEGORY + id,
+      Constant.API_END_POINT + Constant.METHODS.GET_ALL_PRODUCT_BY_CATEGORY + id
     );
   }
 
@@ -30,25 +30,36 @@ export class ProductService {
 
   saveProduct(obj: any) {
     return this.http.post(
-      Constant.API_END_POINT + Constant.METHODS.CREATE_PRODUCT, obj
+      Constant.API_END_POINT + Constant.METHODS.CREATE_PRODUCT,
+      obj
     );
   }
 
   updateProduct(obj: any) {
     return this.http.post(
-      Constant.API_END_POINT + Constant.METHODS.UPDATE_PRODUCT, obj
+      Constant.API_END_POINT + Constant.METHODS.UPDATE_PRODUCT,
+      obj
     );
   }
 
   delenteProduct(id: any) {
     return this.http.get(
-      Constant.API_END_POINT + Constant.METHODS.DELETE_PRODUCT + id ,
+      Constant.API_END_POINT + Constant.METHODS.DELETE_PRODUCT + id
     );
   }
 
   addToCart(obj: any) {
     return this.http.post(
-      Constant.API_END_POINT + Constant.METHODS.ADD_TO_CART, obj
+      Constant.API_END_POINT + Constant.METHODS.ADD_TO_CART,
+      obj
+    );
+  }
+
+  getCartDataByCustId(custId: number) {
+    return this.http.get(
+      Constant.API_END_POINT +
+        Constant.METHODS.GET_ALL_PRODUCT_BY_CATEGORY +
+        custId
     );
   }
 }
